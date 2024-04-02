@@ -15,3 +15,9 @@ class EventsRepository:
            db.session.commit()
            
            return eventsInfo
+       
+       
+    def get_event_by_id(self, event_id: str) -> Events:
+        with db_connection_handler as db:
+            event = db.session.query(Events).filter(Events.id == event_id).one()
+            return event

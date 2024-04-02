@@ -9,3 +9,7 @@ class Events(Base):
     details = Column(String)
     slug = Column(String, nullable=False)
     maximum_attendees = Column(Integer)
+    
+    
+    def __repr__(self):
+        return f"<Event(id={self.id}, title={self.title}, details={self.details}, slug={self.slug}, maximum_attendees={self.maximum_attendees})>"
