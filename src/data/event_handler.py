@@ -5,7 +5,7 @@ from src.http_types.http_response import HttpResponse
 
 class EventHandler:
     def __init__(self) -> None:
-        self.events_repository = EventsRepository()
+        self.__events_repository = EventsRepository()
 
     def register(self, request: HttpRequest) -> HttpResponse:
         body = request.body
