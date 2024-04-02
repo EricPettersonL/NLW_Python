@@ -21,7 +21,7 @@ class AttendeesRepository:
                 
                 return attendeesInfo
             except IntegrityError:
-               raise Exception("Funcionario ja cadastrado")
+               raise Exception("Participante ja cadastrado")
        
             except Exception as exception:
                 db.session.rollback()
