@@ -1,9 +1,9 @@
 from .events_repository import EventsRepository
-from src.models.settings.connection import db_DBConnectionHandler
+from src.models.settings.connection import db_connection_handler
 
 
 
-db_DBConnectionHandler.connect_to_db()
+db_connection_handler.connect_to_db()
 def test_insert_event():
     events_repository = EventsRepository()
     

@@ -1,9 +1,9 @@
 from typing import Dict
-from src.models.settings.connection import db_DBConnectionHandler
+from src.models.settings.connection import db_connection_handler
 from src.models.entities.events import Events
 class EventsRepository:
     def insert_event(self, eventsInfo: Dict) -> Dict:
-       with db_DBConnectionHandler() as db: 
+       with db_connection_handler as db: 
            event = Events(
                id=eventsInfo.get("uuid"),
                title=eventsInfo.get("title"),
