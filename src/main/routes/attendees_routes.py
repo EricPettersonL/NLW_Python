@@ -20,3 +20,12 @@ def find_attendee_badge(attendee_id):
 
     response = attendees_handler.find_attendee_badge(http_request)
     return jsonify(response.body), response.status_code
+
+
+@attendees_routes.route("/events/<event_id>/attendees", methods=["GET"])
+def find_attendees_from_event(event_id):
+    http_request = HttpRequest(params={"event_id": event_id})
+    attendees_handler = AttendeesHandler()
+
+    response = attendees_handler.find_attendees_from_event(http_request)
+    return jsonify(response.body), response.status_code
